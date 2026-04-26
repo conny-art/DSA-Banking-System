@@ -1,7 +1,8 @@
 #include <iostream>
+#include "menu/Menu.h"
 using namespace std;
 
 int main() {
-    cout << "AlgoBank - Starting..." << endl;
+    run();
     return 0;
 }
