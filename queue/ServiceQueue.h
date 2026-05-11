@@ -1,13 +1,14 @@
-// Task 4: Ferenal
+// Task: Ferenal
+
 #pragma once
 #include <string>
-#include "../transaction/Transaction.h"
  
 struct QueueNode {
-    Transaction data;
+    std::string customerName;
+    std::string purpose;
     QueueNode*  next;
  
-    explicit QueueNode(const Transaction& t);
+    QueueNode(std::string name, std::string purp);
 };
  
 class ServiceQueue {
@@ -18,7 +19,9 @@ public:
     ServiceQueue(const ServiceQueue&)            = delete;
     ServiceQueue& operator=(const ServiceQueue&) = delete;
  
-    void enqueue(const Transaction& transaction);
+    void enqueue(const std::string& name, const std::string& purpose);
+    void dequeue();
+    void display() const;
     bool isEmpty() const;
     int  size()    const;
  
